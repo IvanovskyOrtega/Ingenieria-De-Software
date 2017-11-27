@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Información">
+        <menu>
+            <item
+                android:id="@+id/nav_theory"
+                android:icon="@drawable/ic_menu_theory"
+                android:title="Teoría" />
+            <item
+                android:id="@+id/nav_circuit"
+                android:icon="@drawable/ic_menu_circuit"
+                android:title="Circuitos de Ejemplo" />
+            <item
+                android:id="@+id/nav_component"
+                android:icon="@drawable/ic_menu_component"
+                android:title="Busqueda de Componentes" />
+        </menu>
+    </item>
+    <item android:title="Examen">
+        <menu>
+            <item
+                android:id="@+id/nav_exam_T"
+                android:icon="@drawable/ic_menu_exam"
+                android:title="Examen Teórico"/>
+            <item
+                android:id="@+id/nav_exam_P"
+                android:icon="@drawable/ic_menu_exam"
+                android:title="Examen Práctico"/>
+        </menu>
+    </item>
+    <item android:title="Resultados">
+        <menu>
+            <item
+                android:id="@+id/nav_eval_T"
+                android:icon="@drawable/ic_menu_eval"
+                android:title="Resultados Teóricos"/>
+            <item
+                android:id="@+id/nav_eval_P"
+                android:icon="@drawable/ic_menu_eval"
+                android:title="Resultados Prácticos"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_menu_logout"
+        android:title="Cerrar Sesión"/>
+</menu>

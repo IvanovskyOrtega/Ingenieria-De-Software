@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "343714368604",
+    "firebase_url": "https://eeescom-bc952.firebaseio.com",
+    "project_id": "eeescom-bc952",
+    "storage_bucket": "eeescom-bc952.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343714368604:android:8911e24930abeb88",
+        "android_client_info": {
+          "package_name": "com.example.migue.eee_scom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343714368604-um3516jc742tjldg66kc40fm82usn9bq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.migue.eee_scom",
+            "certificate_hash": "308db03c050332604d3acdae71d52ba047ae02ef"
+          }
+        },
+        {
+          "client_id": "343714368604-bnhslsm7al8vvp1jhuep7liilepsk9kq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCnD59aF1lA3Y-pfoOgbTjc5DkhyNrtw0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343714368604-bnhslsm7al8vvp1jhuep7liilepsk9kq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
