@@ -168,7 +168,7 @@ public class Login extends AppCompatActivity {
                             else{
                                 usuarios.child(usuario.getNombreDeUsuario()).setValue(usuario);
                                 Toast.makeText(Login.this,"Se registró el nuevo" +
-                                        "usuario exitosoamente :)",Toast.LENGTH_LONG).show();
+                                        " usuario exitosoamente :)",Toast.LENGTH_LONG).show();
                             }
                         }
                     }
