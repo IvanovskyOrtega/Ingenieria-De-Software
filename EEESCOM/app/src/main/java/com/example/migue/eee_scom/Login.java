@@ -154,30 +154,59 @@ public class Login extends AppCompatActivity {
                         edtNuevoNombreDeUsuario.getText().toString(),
                         edtNuevoPassword.getText().toString(),
                         edtNuevoEmail.getText().toString());
-                usuarios.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(usuario.getPassword().isEmpty() || usuario.getEmail().isEmpty() || usuario.getEmail().isEmpty()){
-                            Toast.makeText(Login.this,"Por favor llena todos los campos :v",Toast.LENGTH_LONG).show();
+                String emailPattern = "(\\W|^)[\\w.+\\-]*@(gmail|hotmail|outlook|yahoo)\\.com(\\W|$)";
+                Pattern pattern = Pattern.compile(emailPattern);
+                Matcher matcher = pattern.matcher(usuario.getEmail());
+                if(matcher.matches()){
+                    String usernamePattern = "^[A-Z|a-z|0-9]{4,15}$";
+                    pattern = Pattern.compile(usernamePattern);
+                    matcher = pattern.matcher(usuario.getNombreDeUsuario());
+                    if(matcher.matches()){
+                        String passwordPattern = "^[0-9a-zA-Z]{5,}$";
+                        pattern = Pattern.compile(passwordPattern);
+                        matcher = pattern.matcher(usuario.getPassword());
+                        if(matcher.matches()){
+                            usuarios.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if(usuario.getPassword().isEmpty() || usuario.getEmail().isEmpty() || usuario.getEmail().isEmpty()){
+                                        Toast.makeText(Login.this,"Por favor llena todos los campos",Toast.LENGTH_LONG).show();
+                                    }
+                                    else{
+                                        if(dataSnapshot.child(usuario.getNombreDeUsuario()).exists()){
+                                            Toast.makeText(Login.this,"El nombre de usuario que ingresó " +
+                                                    "ya existe :(",Toast.LENGTH_LONG).show();
+                                        }
+                                        else{
+                                            usuarios.child(usuario.getNombreDeUsuario()).setValue(usuario);
+                                            Toast.makeText(Login.this,"Se registró el nuevo" +
+                                                    " usuario exitosoamente :)",Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
                         }
                         else{
-                            if(dataSnapshot.child(usuario.getNombreDeUsuario()).exists()){
-                                Toast.makeText(Login.this,"El nombre de usuario que ingresó " +
-                                        "ya existe :(",Toast.LENGTH_LONG).show();
-                            }
-                            else{
-                                usuarios.child(usuario.getNombreDeUsuario()).setValue(usuario);
-                                Toast.makeText(Login.this,"Se registró el nuevo" +
-                                        " usuario exitosoamente :)",Toast.LENGTH_LONG).show();
-                            }
+                            Toast.makeText(Login.this,"La contraseña debe tener una" +
+                                            "longitud mayor a 5 y solo debe contener letras y números"
+                                    ,Toast.LENGTH_LONG).show();
                         }
                     }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
+                    else{
+                        Toast.makeText(Login.this,"El nombre de usuario solo debe " +
+                                        "contener letras y números de una longitud de 5 a 15 caracteres"
+                                ,Toast.LENGTH_LONG).show();
                     }
-                });
+                }
+                else{
+                    Toast.makeText(Login.this,"Por favor ingresa un email válido",
+                            Toast.LENGTH_LONG).show();
+                }
                 dialogInterface.dismiss();
             }
         });
