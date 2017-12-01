@@ -1,39 +1,16 @@
 package com.example.migue.eee_scom;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.AsyncTask;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.migue.eee_scom.Model.Componente;
 import com.example.migue.eee_scom.Model.Usuario;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,14 +19,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import static android.Manifest.permission.READ_CONTACTS;
-
-/**
- * A login screen that offers login via email/password.
- */
 public class Login extends AppCompatActivity {
 
     MaterialEditText edtNuevoNombreDeUsuario,edtNuevoPassword,edtNuevoEmail; // Registro
@@ -59,6 +33,10 @@ public class Login extends AppCompatActivity {
 
     FirebaseDatabase baseDeDatos;
     DatabaseReference usuarios;
+    //DatabaseReference componentes;
+    //DatabaseReference componentesRef;
+
+    boolean registroExitoso = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -69,6 +47,21 @@ public class Login extends AppCompatActivity {
 
         baseDeDatos = FirebaseDatabase.getInstance();
         usuarios = baseDeDatos.getReference("Usuarios");
+
+        /**
+         * En esta parte llenamos la base
+         * **/
+
+        /*componentes = baseDeDatos.getReference("Componentes");
+        componentesRef = componentes.getRef();
+        Map<String, Componente> componentes = new HashMap<String, Componente>();
+        componentes.put("lm555", new Componente("LM555","El temporizador IC 555 es un circuito integrado (chip) que se utiliza en la generación de temporizadores, pulsos y oscilaciones. El 555 puede ser utilizado para proporcionar retardos de tiempo, como un oscilador, y como un circuito integrado flip flop."));
+        componentes.put("resistencia", new Componente("Resistencia", "Las resistencias restringen o limitan el flujo de la corriente eléctrica"));
+        componentes.put("capacitor",new Componente("Capacitor","Un capacitor es un dispositivo para almacenar energía potencial eléctrica, carga eléctrica, y por ende campo eléctrico."));
+        componentes.put("lm741",new Componente("LM741","El LM741 es un amplificador operacional monolítico de altas características. Se ha diseñado para una amplia gama de aplicaciones analógicas. Un alto rango de voltaje en modo común y ausencia de lacth-up tienden a hacer el LM741 ideal para usarlo como un seguidor de tensión. "));
+        componentes.put("diodos1n400x",new Componente("Diodo","Un diodo es un componente electrónico de dos terminales que permite la circulación de la corriente eléctrica a través de él en un solo sentido"));
+        componentes.put("transistor",new Componente("Transistor","El transistor es un dispositivo electrónico semiconductor utilizado para entregar una señal de salida en respuesta a una señal de entrada. Cumple funciones de amplificador, oscilador, conmutador o rectificador. "));
+        componentesRef.setValue(componentes);*/
         edtNombreDeUsuario = (MaterialEditText)findViewById(R.id.edtNombreDeUsuario);
         edtPassword = (MaterialEditText)findViewById(R.id.edtPassword);
 
@@ -100,7 +93,10 @@ public class Login extends AppCompatActivity {
                         if(login.getPassword().equals(password)){
                             Toast.makeText(Login.this,"Se inició sesión exitosamente :)",
                                     Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Login.this,Principal.class));
+                            Intent start = new Intent(Login.this, Principal.class);
+                            start.putExtra("param",login);
+                            login = null;
+                            startActivity(start);
                         }
                         else{
                             Toast.makeText(Login.this,"Contraseña incorrecta :(",
@@ -214,4 +210,3 @@ public class Login extends AppCompatActivity {
         mensajeDeAlerta.show();
     }
 }
-
