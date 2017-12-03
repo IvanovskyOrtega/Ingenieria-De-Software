@@ -31,8 +31,8 @@ public class Login extends AppCompatActivity {
 
     Button iniciarSesion_button,registro_button;
 
-    FirebaseDatabase baseDeDatos;
-    DatabaseReference usuarios;
+    FirebaseDatabase baseDeDatos; // Base de datos
+    DatabaseReference usuarios; // Referencia a una tabla en la base de datos
     //DatabaseReference componentes;
     //DatabaseReference componentesRef;
 
@@ -45,11 +45,11 @@ public class Login extends AppCompatActivity {
 
         // Firebase
 
-        baseDeDatos = FirebaseDatabase.getInstance();
-        usuarios = baseDeDatos.getReference("Usuarios");
+        baseDeDatos = FirebaseDatabase.getInstance(); // Se obtiene la instancia
+        usuarios = baseDeDatos.getReference("Usuarios");    // Se hace una referencia a la tabla Usuarios
 
         /**
-         * En esta parte llenamos la base
+         * En esta parte llenamos la base para los componentes.
          * **/
 
         /*componentes = baseDeDatos.getReference("Componentes");
@@ -87,8 +87,13 @@ public class Login extends AppCompatActivity {
         usuarios.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                // Se hace una consulta con DataSnapshot, busca si el usuario (la cadena),
+                // existe en la tabla.
                 if(dataSnapshot.child(usuario).exists()){
+                    // Se asegura que no sea una cadena nula
                     if(!usuario.isEmpty()){
+                        // Se crea el objeto usando el nombre del usuario
+                        // Se obtienen los demás atributos desde la base
                         Usuario login = dataSnapshot.child(usuario).getValue(Usuario.class);
                         if(login.getPassword().equals(password)){
                             Toast.makeText(Login.this,"Se inició sesión exitosamente :)",
