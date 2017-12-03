@@ -1,10 +1,13 @@
 package com.example.migue.eee_scom.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by Ivanovsky on 11/26/2017.
  */
 
-public class Usuario {
+@SuppressWarnings("serial")
+public class Usuario implements Serializable {
     private String nombreDeUsuario;
     private String password;
     private String email;

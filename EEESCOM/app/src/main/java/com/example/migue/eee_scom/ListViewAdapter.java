@@ -16,14 +16,14 @@ public class ListViewAdapter extends BaseAdapter {
 
     Context mContext;
     LayoutInflater inflater;
-    private List<Components> ComponentsList = null;
-    private ArrayList<Components> arraylist;
+    private List<String> ComponentsList = null;
+    private ArrayList<String> arraylist;
 
-    public ListViewAdapter(Context context, List<Components> ComponentsList) {
+    public ListViewAdapter(Context context, List<String> ComponentsList) {
         mContext = context;
         this.ComponentsList = ComponentsList;
         inflater = LayoutInflater.from(mContext);
-        this.arraylist = new ArrayList<Components>();
+        this.arraylist = new ArrayList<String>();
         this.arraylist.addAll(ComponentsList);
     }
 
@@ -37,7 +37,7 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     @Override
-    public Components getItem(int position) {
+    public String getItem(int position) {
         return ComponentsList.get(position);
     }
 
@@ -58,7 +58,7 @@ public class ListViewAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         // Set the results into TextViews
-        holder.name.setText(ComponentsList.get(position).getComponent());
+        holder.name.setText(ComponentsList.get(position));
         return view;
     }
 
@@ -69,8 +69,8 @@ public class ListViewAdapter extends BaseAdapter {
         if (charText.length() == 0) {
             ComponentsList.addAll(arraylist);
         } else {
-            for (Components wp : arraylist) {
-                if (wp.getComponent().toLowerCase(Locale.getDefault()).contains(charText)) {
+            for (String wp : arraylist) {
+                if (wp.toLowerCase(Locale.getDefault()).contains(charText)) {
                     ComponentsList.add(wp);
                 }
             }

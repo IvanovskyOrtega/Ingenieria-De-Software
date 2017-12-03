@@ -30,6 +30,13 @@
             android:label="@string/title_activity_principal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Search" />
+        <activity android:name=".QuizActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
         <activity android:name=".list_view_items" />
         <activity android:name=".componentDetails"></activity>
     </application>

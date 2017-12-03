@@ -1,5 +1,6 @@
 package com.example.migue.eee_scom.Model;
 
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

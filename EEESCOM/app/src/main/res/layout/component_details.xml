@@ -20,4 +20,10 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_menu_documentation" />
 
+    <TextView
+        android:id="@+id/info_llegada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"/>
+
 </android.support.constraint.ConstraintLayout>

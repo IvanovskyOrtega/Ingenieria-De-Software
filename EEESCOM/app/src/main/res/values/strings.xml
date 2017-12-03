@@ -20,4 +20,30 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="foto">Foto de Perfil</string>
+    <string name="question">PREGUNTAS DE LECCION</string>
+    <string name="check">Check</string>
+    <string name="correct">Very good!</string>
+    <string name="incorrect">Incorrect...</string>
+    <string name="next">SIGUIENTE</string>
+    <string name="finish">FINALIZAR</string>
+    <string name="prev">ANTERIOR</string>
+
+    <array name="all_questions">
+
+        <item>Numero de leccion;1;*2;3;4;5</item>
+        <item>¿Que es un elemento electronico?; Dispositivo que conduce corriente;Elemento resistivo;*Elemento que formaparte de un circuito electrico;Elemento activo;Circuito integrado</item>
+        <item>¿Cuales son los dos tipos de elementos que existen en un circuito?;Elementos resistivos y conductores;*Elementos pasivos y activos;Elementos digitales y analogicos ;elementos conductores y no conductores</item>
+        <item>¿Cuales son los dos materiales principales de los CI;Metal,cobre;*Silicio y germanio;Aluminio y fierro;cobre</item>
+        <item>¿Cual es la ley de OHM?; V=RC;V=IC;*V=RI;V=R/I;V=i/r</item>
+        <item>¿Que circuito integrado tiene la funcion de un oscilador?;3N2222a;*N555;LM331;AD590</item>
+        <item>¿Como se le llama a un punto donde se unen dos o mas elementos?;union;*nodo;conjunto;grupo</item>
+        <item>¿Como se le llama al espacio entre nodos,elementos??;Espacio;*Mallas;Interior;libre</item>
+        <item>¿Como se mide el voltaje en un circuito?;En serie con el elemento;*En paralelo con el elemento;Desconectando el circuito;Conectandolo en algun punto</item>
+        <item>¿Como se mide la corriente en un circuito?;*En serie y abriendo el circuito;En paralelo;Desconectando el circuito;Conectandolo en algun punto</item>
+        <item>¿Caul es la formula de las resistencias en serie?;Rn/n;*R1+R2+...+Rn;RnxR1;(Rn)n</item>
+        <item>¿Como se les llama el conjunto de resistencias simplificadas de un circuito?;Suma de resistencias;*Resistencia equivalente;Resistencia total;Resistencia final</item>
+        <item>¿Que tipos de corriente hay?;Corriente total,corriente fuga;*Corriente alterna y directa;corriente parasito, unitaria;corriente total,parcial</item>
+        <item>FINALIZAR TEST Y SALIR;*SI;NO;°;°</item>
+    </array>
 </resources>

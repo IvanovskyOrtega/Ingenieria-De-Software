@@ -5,6 +5,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class componentDetails extends AppCompatActivity {
 
@@ -14,7 +15,8 @@ public class componentDetails extends AppCompatActivity {
         setContentView(R.layout.component_details);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.documentationButton);
-
+        TextView txt = (TextView)findViewById(R.id.info_llegada);
+        txt.setText(getIntent().getExtras().getString("parametro"));
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
