@@ -1,0 +1,4 @@
+#Sun Dec 10 01:47:29 CST 2017
+base.0=C\:\\Users\\Ivanovsky\\Desktop\\New folder\\Modulo-Vuforia\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

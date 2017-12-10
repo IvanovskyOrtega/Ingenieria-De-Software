@@ -1,0 +1,15 @@
+#Internal package file, do not edit.
+#Sun Dec 10 01:47:29 CST 2017
+1.base=C\:\\Users\\Ivanovsky\\Desktop\\New folder\\Modulo-Vuforia\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
+2.path=Books/CR_about.html
+0.baseType=DIRECTORY
+2.base=C\:\\Users\\Ivanovsky\\Desktop\\New folder\\Modulo-Vuforia\\app\\build\\intermediates\\assets\\debug
+2.set=ASSET
+1.baseType=DIRECTORY
+count=3
+1.set=NATIVE_RESOURCE
+0.path=classes.dex
+0.set=DEX
+0.base=C\:\\Users\\Ivanovsky\\Desktop\\New folder\\Modulo-Vuforia\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+2.baseType=DIRECTORY
+1.path=lib/armeabi-v7a/libVuforia.so
