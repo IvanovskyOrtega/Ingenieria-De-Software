@@ -6,4 +6,5 @@
 - Uses Vuforia SDK for AR and image recognition.
 - The image recognition it's actually really basic, in those days we didn't know anything about computer vision.
 - It's suppossed to work on Android 4.4 and newer devices.
-- The sources in this repository are out of date, but the last version of the app can be found in the releases section.
+- Uses Firebase to store electronic components information.
+- **The sources in this repository are out of date, but the last version of the app can be found in the releases section.**
